@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.gdgfinder.add.AddGdgViewModel" />
+    </data>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".add.AddGdgFragment">
+
+            <TextView
+                android:id="@+id/textViewIntro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_gdg"
+                android:textColor="#AAAAAA"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="411dp"
+                android:layout_height="230dp"
+                tools:src="@tools:sample/avatars"
+                app:srcCompat="@drawable/behind"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="2dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toBottomOf="@id/textViewIntro"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/editTextName"/>
+
+            <EditText
+                android:id="@+id/editTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/editTextMail"
+                android:singleLine="true"/>
+
+            <EditText
+                android:id="@+id/editTextMail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintTop_toBottomOf="@id/editTextName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/editTextCity"
+                android:singleLine="true"/>
+
+            <EditText
+                android:id="@+id/editTextCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintTop_toBottomOf="@id/editTextMail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/editTextCountry"
+                android:singleLine="true"/>
+
+            <EditText
+                android:id="@+id/editTextCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintTop_toBottomOf="@id/editTextCity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/editTextRegion"
+                android:singleLine="true"/>
+
+            <EditText
+                android:id="@+id/editTextRegion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintTop_toBottomOf="@id/editTextCountry"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/editTextWhy"
+                android:singleLine="true"/>
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/contentGroup"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:focusable="true"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:layout_marginBottom="8dp"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/editTextRegion"-->
+<!--                app:layout_constraintStart_toStartOf="@id/editTextRegion"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/editTextRegion"-->
+<!--                app:layout_constraintBottom_toTopOf="@id/button">-->
+
+                <TextView
+                    android:id="@+id/labelTextWhy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/motivation"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginBottom="1dp"
+                    app:layout_constraintTop_toBottomOf="@id/editTextRegion"
+                    app:layout_constraintBottom_toTopOf="@id/editTextWhy"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <EditText
+                    android:id="@+id/editTextWhy"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textMultiLine"
+                    android:ems="10"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/editTextRegion"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/button"/>
+
+
+<!--            </LinearLayout>-->
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="40dp"
+                android:layout_height="24dp"
+                android:text="Ok"
+                android:backgroundTint="#00FF00"
+                android:textColor="#FF0000"
+                android:textSize="12sp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginEnd="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextWhy"
+                android:onClick="@{() -> viewModel.onSubmitApplication()}"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>
