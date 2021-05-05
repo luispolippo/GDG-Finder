@@ -36,6 +36,9 @@ class AddGdgFragment: Fragment() {
                     Snackbar.LENGTH_SHORT
                 ).show()
                 viewModel.doneShowingSnackBar()
+
+                binding.button.contentDescription = getString(R.string.submitted)
+                binding.button.text = getString(R.string.done)
             }
         })
 
